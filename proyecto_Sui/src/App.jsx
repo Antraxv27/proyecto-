@@ -41,7 +41,7 @@ function App() {
 
         // 1. ObjectID válido → tx.object(...)
         if (typeof arg === "string" && isValidSuiObjectId(arg)) {
-          console.log(Arg[${idx}] es ObjectID → tx.object(${arg}));
+          console.log(`Arg[${idx}] es ObjectID → tx.object(${arg})`);
           return tx.object(arg);
         }
 
@@ -59,7 +59,7 @@ function App() {
             case "string": return tx.pure.string(String(value));
             case "address": return tx.pure.address(value);
             default:
-              console.warn(Tipo no manejado (${type}), usando tx.pure);
+              console.warn(`Tipo no manejado (${type}), usando tx.pure`);
               return tx.pure(value);
           }
         }
@@ -71,7 +71,7 @@ function App() {
         if (typeof arg === "string") return tx.pure.string(arg);
 
         // 4. Fallback
-        console.warn(Arg[${idx}] fallback → tx.pure(arg));
+        console.warn(`Arg[${idx}] fallback → tx.pure(arg)`);
         return tx.pure(arg);
       });
 
@@ -81,11 +81,11 @@ function App() {
       // 2) CONSTRUIR MOVE CALL
       // ===============================
       tx.moveCall({
-        target: ${packageId}::${modulo}::${params.funcion},
+        target: `${packageId}::${modulo}::${params.funcion}`,
         arguments: args,
       });
 
-      console.log("TARGET:", ${packageId}::${modulo}::${params.funcion});
+      console.log("TARGET:", `${packageId}::${modulo}::${params.funcion}`);
 
       // ====================================
       // 3) DETECTAR SI ES FUNCIÓN "VIEW"
@@ -112,7 +112,7 @@ function App() {
         const decoded = decodeReturnValues(result);
         // cambiarRespuesta(decoded);
         if (params.funcion === "retornar_todo"){
-          cambiarRespuesta(El usuario: ${decoded[4]}, que tiene un año de registro del: ${decoded[0]}, tiene un porcentaje de descuento del: ${decoded[3]['raw'][1]}, y una direccion de facturacion: ${decoded[1]})
+          cambiarRespuesta(`El usuario: ${decoded[4]}, que tiene un año de registro del: ${decoded[0]}, tiene un porcentaje de descuento del: ${decoded[3]['raw'][1]}, y una direccion de facturacion: ${decoded[1]}`)
         }
         
 

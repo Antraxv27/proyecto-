@@ -140,7 +140,7 @@ function FunctionCard({ config, ClientCall, estado, objectId }) {
                         </label>
                         <input 
                             type={input.type.includes('u') ? "number" : "text"} // Detecta si es número (u8, u16...) o texto
-                            placeholder={Ingresa ${input.label}}
+                            placeholder={`Ingresa ${input.label}`}
                             onChange={(e) => handleChange(input.name, e.target.value)}
                             style={{
                                 padding: "10px 15px",
