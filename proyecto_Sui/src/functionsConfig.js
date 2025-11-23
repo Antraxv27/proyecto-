@@ -1,70 +1,68 @@
 export const FUNCTIONS = [
     {
-        titulo: "Ver Nombre de la Empresa",
-        descripcion: "Ver cual es el nombre de registro de la empresa a gestionar",
+        titulo: "Ver Nombre del Clan",
+        descripcion: "Consultar el nombre registrado del clan de Warzone",
         nombreFuncion: "ver_nombre",
         soloLectura: "1",
-        inputs: [
-        ]
+        inputs: []
     },
 
     {
-        titulo: "Agregar Cliente",
-        descripcion: "Registra un nuevo cliente en la empresa con nivel inicial Cobre.",
+        titulo: "Registrar Nuevo Jugador",
+        descripcion: "Agregar un nuevo jugador al clan con rango inicial Recluta.",
         nombreFuncion: "agregar_cliente",
         soloLectura: "0",
         inputs: [
-            // Nota: 'empresa' (primer argumento en Move) se manejará automáticamente con empresaId
-            { name: "nombre_cliente", type: "string", label: "Nombre Completo" },
-            { name: "direccion_facturacion", type: "string", label: "Dirección" },
-            { name: "ano_de_registro", type: "u8", label: "Año Registro (ej. 23)" },
-            { name: "id_cliente", type: "u16", label: "ID Único Cliente" }
+            { name: "nombre_cliente", type: "string", label: "Gamertag del Jugador" },
+            { name: "direccion_facturacion", type: "string", label: "Región/Server" },
+            { name: "ano_de_registro", type: "u8", label: "Temporada de Ingreso (ej. 6)" },
+            { name: "id_cliente", type: "u16", label: "ID Único de Jugador" }
         ]
     },
     {
-        titulo: "Agregar Servicio",
-        descripcion: "Añade un servicio al historial de un cliente existente.",
+        titulo: "Agregar Especialización",
+        descripcion: "Añadir una especialización o loadout al perfil del jugador.",
         nombreFuncion: "agregar_servicio",
         soloLectura: "0",
         inputs: [
-            { name: "id_cliente", type: "u16", label: "ID del Cliente" },
-            { name: "servicio", type: "string", label: "Nombre del Servicio" }
+            { name: "id_cliente", type: "u16", label: "ID del Jugador" },
+            { name: "servicio", type: "string", label: "Especialización/Loadout" }
         ]
     },
     {
-        titulo: "Cambiar Nivel a Oro",
-        descripcion: "Actualiza el nivel de un cliente a Oro (15% descuento).",
+        titulo: "Ascender a Rango Élite",
+        descripcion: "Promover jugador a rango Élite (beneficios de clan).",
         nombreFuncion: "cambiar_nivel_a_oro",
         soloLectura: "0",
         inputs: [
-            { name: "id_cliente", type: "u16", label: "ID del Cliente" }
+            { name: "id_cliente", type: "u16", label: "ID del Jugador" }
         ]
     },
     {
-        titulo: "Aplicar Descuento",
-        descripcion: "Aplicar un descuento segun el nivel actual del cliente",
+        titulo: "Consultar Beneficios de Rango",
+        descripcion: "Ver beneficios disponibles según el rango del jugador",
         nombreFuncion: "aplicar_descuento",
         soloLectura: "1",
         inputs: [
-            {name: "id_cliente", type:"u16", label: "ID del Cliente"}
+            {name: "id_cliente", type:"u16", label: "ID del Jugador"}
         ]
     },
     {
-        titulo: "Resumen de Usuario",
-        descripcion: "Ver el resumen y los datos generales de un usuario",
+        titulo: "Estadísticas del Jugador",
+        descripcion: "Ver estadísticas y perfil completo del jugador",
         nombreFuncion: "ver_estado_cliente",
         soloLectura: "1",
         inputs: [
-            {name: "id_cliente", type:"u16", label: "ID del Cliente"}
+            {name: "id_cliente", type:"u16", label: "ID del Jugador"}
         ]
     },
     {
-        titulo: "Retornar todo",
-        descripcion: "Retorna toda la informacion del usuario en su formato correspondiente",
+        titulo: "Expediente Completo",
+        descripcion: "Consultar toda la información del jugador",
         nombreFuncion: "retornar_todo",
         soloLectura: "1",
         inputs: [
-            {name: "id_cliente", type:"u16", label: "ID del Cliente"}
+            {name: "id_cliente", type:"u16", label: "ID del Jugador"}
         ]
     }
 ];
