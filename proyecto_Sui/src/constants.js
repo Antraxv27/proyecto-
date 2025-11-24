@@ -1,4 +1,4 @@
-export const PACKAGE_ID = "0xabc0e8d9b05b46ea8b50f7183de8a235a8acffaf1254e428446a0fa659ef7c68"
+export const PACKAGE_ID = "0xaa02cd4384080f88948bd7f11e40cbd6393fc478d8b668e61edf9babf9d8882c"
 
 export const APP_CONFIG = {
   NAME: "Warzone Squad Manager",
